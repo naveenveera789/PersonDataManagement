@@ -20,5 +20,12 @@ namespace PersonDataManagement
             listPersonsInCity.Add(new Person("173092021", "Madhu", "Gannavaram, Andhra Pradesh", 24));
             listPersonsInCity.Add(new Person("173102021", "Anudeep", "Gudivada, Andhra Pradesh", 44));
         }
+        public void RetreivingTopTwoRecords_ForAgeIs_LessThanSixty(List<Person> listPersonsInCity)
+        {
+            foreach (Person person in listPersonsInCity.FindAll(x => (x.Age < 60)).Take(2).ToList())
+            {
+                Console.WriteLine("Name : " + person.Name + "\t\tAge : " + person.Age);
+            }
+        }
     }
 }
